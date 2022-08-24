@@ -21,17 +21,18 @@ const Logo = styled.img`
 
 const Nav = styled.nav`
   flex-grow: 1;
-  margin: 0 87px 0 150px;
 `;
 
 const List = styled.ul`
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
 `;
 
-const Item = styled.li``;
+const Item = styled.li`
+  padding: 0.5rem;
+`;
 
 const Link = styled(NavLink)`
   color: white;
