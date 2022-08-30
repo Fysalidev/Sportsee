@@ -1,29 +1,18 @@
-/* import logo from '../assets/logo.svg'; */
 import styled from "styled-components";
 import "../styles/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Header from "./Header";
-import VerticalLayout from "./VerticalLayout";
+import Dashboard from "../pages/Dashboard";
+import Error from "../pages/Error";
 
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  min-width: 1024px;
-  max-width: 1440px;
   margin: auto;
-`;
-
-const Main = styled.main`
-  display: flex;
-  width: 100%;
-  height: 100%;
-`;
-
-const Section = styled.section`
-  flex-grow: 1;
-  background: pink;
+  max-width: 1440px;
+  min-width: 1024px;
 `;
 
 function App() {
@@ -31,14 +20,11 @@ function App() {
     <AppWrapper>
       <BrowserRouter>
         <Header />
-        <Main>
-          <VerticalLayout />
-          <Section>
-            <Routes>
-              <Route path="/" element={<Home />} />
-            </Routes>
-          </Section>
-        </Main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/user/:id" element={<Dashboard />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
       </BrowserRouter>
     </AppWrapper>
   );
