@@ -1,9 +1,17 @@
-import { render } from "@testing-library/react";
 import styled from "styled-components";
 
+const Wrapper = styled.div``;
+
+const Title = styled.h1`
+  color: white;
+`;
+
 function Switch() {
-  render(
- 
+  return (
+    <Wrapper>
+      <Title>Hello</Title>
+    </Wrapper>
   );
 }
+
 export default Switch;

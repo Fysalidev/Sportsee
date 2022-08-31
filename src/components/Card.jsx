@@ -11,6 +11,7 @@ const CardWrapper = styled.div`
   border-radius: 11rem;
   display: flex;
   flex-direction: column;
+  gap:1rem;
   height: 20rem;
   justify-content: center;
   opacity: 0.75;

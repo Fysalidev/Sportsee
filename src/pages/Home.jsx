@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Card from "../components/Card";
+import Switch from "../components/Switch";
 
 const Main = styled.main`
   align-items: center;
@@ -25,10 +26,10 @@ const CardsWrapper = styled.div`
 `;
 
 const SwitchWrapper = styled.div`
-  align-items:center;
-  display:flex;
+  align-items: center;
+  display: flex;
   height: 50%;
-  justify-content:center;
+  justify-content: center;
 `;
 
 function Home() {
@@ -39,7 +40,9 @@ function Home() {
           <Card gender="woman" id="12" />
           <Card gender="man" id="18" />
         </CardsWrapper>
-        <SwitchWrapper></SwitchWrapper>
+        <SwitchWrapper>
+          <Switch />
+        </SwitchWrapper>
       </Dialog>
     </Main>
   );
