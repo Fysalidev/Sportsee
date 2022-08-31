@@ -28,8 +28,17 @@ const CardsWrapper = styled.div`
 const SwitchWrapper = styled.div`
   align-items: center;
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   height: 50%;
   justify-content: center;
+`;
+
+const Title = styled.h2`
+  color: #e60000;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
 `;
 
 function Home() {
@@ -41,6 +50,7 @@ function Home() {
           <Card gender="man" id="18" />
         </CardsWrapper>
         <SwitchWrapper>
+          <Title>Setup Data Import ?</Title>
           <Switch />
         </SwitchWrapper>
       </Dialog>

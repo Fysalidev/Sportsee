@@ -1,4 +1,13 @@
+import { useState } from "react";
 import styled from "styled-components";
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+`;
 
 const SwitchButton = styled.label`
   display: inline-block;
@@ -13,8 +22,8 @@ const Input = styled.input`
   position: absolute;
   top: -30px;
   left: -30px;
-  width: 0;
   height: 0;
+  width: 0;
   & + span {
     position: absolute;
     top: 0;
@@ -45,12 +54,27 @@ const Input = styled.input`
   }
 `;
 
+const SwitchState = styled.span`
+  color: #e60000;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+`;
+
 function Switch() {
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = () => {
+    setChecked(!checked);
+  };
+
   return (
-    <SwitchButton>
-      <Input type="checkbox" />
-      <span></span>
-    </SwitchButton>
+    <Wrapper>
+      <SwitchButton>
+        <Input type="checkbox" checked={checked} onChange={handleChange} />
+        <span></span>
+      </SwitchButton>
+      <SwitchState> {checked ? "Api" : "Mocked"}</SwitchState>
+    </Wrapper>
   );
 }
 

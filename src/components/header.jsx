@@ -13,10 +13,10 @@ const HeaderWrapper = styled.header`
 
 const Logo = styled.img`
   height: 61px;
-  width: 178px;
   object-fit: cover;
   object-position: center;
   margin-left: 29px;
+  width: 178px;
 `;
 
 const Nav = styled.nav`
