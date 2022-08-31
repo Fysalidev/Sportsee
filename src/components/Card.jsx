@@ -8,10 +8,9 @@ const Root = styled(Link)``;
 const CardWrapper = styled.div`
   align-items: center;
   background: red;
-  border-radius: 5px;
+  border-radius: 11rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   height: 20rem;
   justify-content: center;
   opacity: 0.75;
@@ -19,14 +18,14 @@ const CardWrapper = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 10rem;
   height: 10rem;
+  width: 10rem;
 `;
 
 const Title = styled.h2`
   color: white;
-  font-size: 2rem;
   font-family: "Roboto", sans-serif;
+  font-size: 2rem;
   font-weight: 500;
 `;
 
@@ -40,4 +39,5 @@ function Card({ gender, id }) {
     </Root>
   );
 }
+
 export default Card;

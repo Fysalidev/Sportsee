@@ -1,39 +1,45 @@
 import styled from "styled-components";
-import Card from "../components/Card"
+import Card from "../components/Card";
 
 const Main = styled.main`
-  display: flex;
   align-items: center;
+  display: flex;
+  height: 100%;
   justify-content: center;
-  width:100%;
-  height:100%;
+  width: 100%;
 `;
 
 const Dialog = styled.div`
-width:50rem;
-height:42rem;
-background:black;
-border-radius:1rem;
-
+  background: black;
+  border-radius: 0.5rem;
+  height: 42rem;
+  overflow: hidden;
+  padding: 1rem;
+  width: 50rem;
 `;
 
-const Switch = styled.div``;
-
-const Cards = styled.div`
-  display: flex;
+const CardsWrapper = styled.div`
   align-items: center;
+  display: flex;
   justify-content: space-around;
+`;
+
+const SwitchWrapper = styled.div`
+  align-items:center;
+  display:flex;
+  height: 50%;
+  justify-content:center;
 `;
 
 function Home() {
   return (
     <Main>
       <Dialog>
-        <Switch></Switch>
-        <Cards>
+        <CardsWrapper>
           <Card gender="woman" id="12" />
           <Card gender="man" id="18" />
-        </Cards>
+        </CardsWrapper>
+        <SwitchWrapper></SwitchWrapper>
       </Dialog>
     </Main>
   );
