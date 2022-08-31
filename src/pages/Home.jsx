@@ -4,6 +4,7 @@ import Switch from "../components/Switch";
 
 const Main = styled.main`
   align-items: center;
+  background:black;
   display: flex;
   height: 100%;
   justify-content: center;
@@ -46,8 +47,8 @@ function Home() {
     <Main>
       <Dialog>
         <CardsWrapper>
-          <Card gender="woman" id="12" />
-          <Card gender="man" id="18" />
+          <Card gender="man" id="12" />
+          <Card gender="woman" id="18" />
         </CardsWrapper>
         <SwitchWrapper>
           <Title>Setup Data Import ?</Title>

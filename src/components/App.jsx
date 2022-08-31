@@ -15,16 +15,22 @@ const AppWrapper = styled.div`
   min-width: 1024px;
 `;
 
+const View = styled.div`
+  flex-grow: 1;
+`;
+
 function App() {
   return (
     <AppWrapper>
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/user/:id" element={<Dashboard />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
+        <View>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/user/:id" element={<Dashboard />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </View>
       </BrowserRouter>
     </AppWrapper>
   );
