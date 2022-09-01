@@ -12,7 +12,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 68px 90px 0 109px;
+  ${'' /* padding: 68px 90px 0 109px; */}
   gap: 77px;
 `;
 
@@ -58,29 +58,28 @@ const Diagrams = styled.div`
 `;
 
 const ActivityGraph = styled.div`
-display: flex;
-justify-content: column;
-background:blue;
-height:320px;
-
+  display: flex;
+  justify-content: column;
+  background: blue;
+  height: 320px;
 `;
 
 const Graphics = styled.div`
-display:flex;
-justify-content:space-between;
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Graph = styled.div`
-width: 258px;
-height: 263px;
-background: white;
+  width: 258px;
+  height: 263px;
+  background: white;
 `;
 
 const Cards = styled.div`
   flex-grow: 1;
   background: green;
-  max-width:258px;
-  min-width:200px;
+  max-width: 258px;
+  min-width: 200px;
 `;
 
 function Dashboard() {
