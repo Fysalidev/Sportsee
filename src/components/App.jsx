@@ -7,12 +7,10 @@ import Dashboard from "../pages/Dashboard";
 import Error from "../pages/Error";
 
 const AppWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  flex-direction:column;
+  display:flex;
   height: 100vh;
-  margin: auto;
-  max-width: 1440px;
-  min-width: 1024px;
+  width: 100%;
 `;
 
 const View = styled.div`
