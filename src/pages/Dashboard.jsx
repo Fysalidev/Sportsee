@@ -9,77 +9,53 @@ const Wrapper = styled.div`
 `;
 
 const Main = styled.main`
-  display: flex;
-  flex-direction: column;
   flex-grow: 1;
-  ${'' /* padding: 68px 90px 0 109px; */}
-  gap: 77px;
 `;
 
-const Header = styled.header`
-  background: transparent;
+const Content = styled.div`
+  
+`;
+
+const Activity = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`;
-
-const Title = styled.h1`
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 48px;
-  line-height: 24px;
-  padding: 1rem 0;
-`;
-
-const Name = styled.span`
-  color: red;
-`;
-
-const Paragraph = styled.p`
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-`;
-
-const Content = styled.section`
-  flex-grow: 1;
-  background: green;
-  display: flex;
-`;
-
-const Diagrams = styled.div`
-  flex-grow: 2;
-  background: red;
-  min-width: 774px;
-  max-width: 835px;
-`;
-
-const ActivityGraph = styled.div`
-  display: flex;
-  justify-content: column;
-  background: blue;
-  height: 320px;
-`;
-
-const Graphics = styled.div`
-  display: flex;
+  max-width:1124px;
   justify-content: space-between;
 `;
 
-const Graph = styled.div`
-  width: 258px;
-  height: 263px;
-  background: white;
+const Graphics = styled.div`
+flex-grow:1;
+max-width:834px;`;
+
+const Top = styled.div``;
+
+const LargeGraph = styled.div`
+  height: 320px;
+  background: blue;
+`;
+
+const Bottom = styled.div`
+display:flex;
+justify-content: space-between;
+
+`;
+
+const SmallGraph = styled.div`
+width:258px;
+height:263px;
+background:pink;
 `;
 
 const Cards = styled.div`
-  flex-grow: 1;
-  background: green;
-  max-width: 258px;
-  min-width: 200px;
+background: yellow;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+`;
+
+const Card = styled.div`
+width:258px;
+height:124px;
+background:grey;
 `;
 
 function Dashboard() {
@@ -92,24 +68,29 @@ function Dashboard() {
     <Wrapper>
       <VerticalLayout />
       <Main>
-        <Header>
-          <Title>
-            Bonjour <Name>{id}</Name>
-          </Title>
-          <Paragraph>
-            Félicitation ! Vous avez explosé vos objectifs hier 👏
-          </Paragraph>
-        </Header>
         <Content>
-          <Diagrams>
-            <ActivityGraph>Activity Graph</ActivityGraph>
+          <div>
+            <h1>Bonjour Grégory</h1>
+            <p>Paragraphe de le page sera ici</p>
+          </div>
+          <Activity>
             <Graphics>
-              <Graph>Session</Graph>
-              <Graph>Intensité</Graph>
-              <Graph>Score</Graph>
+              <Top>
+                <LargeGraph>Activity</LargeGraph>
+              </Top>
+              <Bottom>
+                <SmallGraph>Session</SmallGraph>
+                <SmallGraph>Intensity Graph</SmallGraph>
+                <SmallGraph>Score</SmallGraph>
+              </Bottom>
             </Graphics>
-          </Diagrams>
-          <Cards></Cards>
+            <Cards>
+              <Card>Calories</Card>
+              <Card>Protéines</Card>
+              <Card>Glucides</Card>
+              <Card>Lipides</Card>
+            </Cards>
+          </Activity>
         </Content>
       </Main>
     </Wrapper>
