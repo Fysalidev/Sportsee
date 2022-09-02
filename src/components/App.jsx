@@ -7,8 +7,8 @@ import Dashboard from "../pages/Dashboard";
 import Error from "../pages/Error";
 
 const AppWrapper = styled.div`
-  flex-direction:column;
-  display:flex;
+  flex-direction: column;
+  display: flex;
   height: 100vh;
   width: 100%;
 `;

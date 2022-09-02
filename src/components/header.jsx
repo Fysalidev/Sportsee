@@ -49,7 +49,9 @@ const Link = styled(NavLink)`
 function Header() {
   return (
     <HeaderWrapper>
-      <Logo src={logo} alt="logo Sportsee"></Logo>
+      <Link to="/">
+        <Logo src={logo} alt="logo Sportsee"></Logo>
+      </Link>
       <Nav>
         <List>
           <Item>
