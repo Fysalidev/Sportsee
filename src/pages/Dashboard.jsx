@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import VerticalLayout from "../components/VerticalLayout";
 import { useParams, useNavigate } from "react-router-dom";
+import { userData } from "../services/providers";
+import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -86,9 +88,24 @@ const Card = styled.div`
 
 function Dashboard() {
   const { id } = useParams();
-  console.log(id);
   const navigate = useNavigate();
-  console.log(navigate);
+
+  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState({});
+  const [useMockedData, setApi] = useState(true);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const user = await userData(id, useMockedData);
+        setData(user);
+        setIsLoading(false);
+      } catch (error) {
+        console.log("error : ", error);
+        navigate("/Error");
+      }
+    })();
+  }, [navigate, id, useMockedData]);
 
   return (
     <Wrapper>
@@ -97,7 +114,7 @@ function Dashboard() {
         <Content>
           <Header>
             <h1>
-              Bonjour <span>User {id}</span>
+              Bonjour <span>{data.firstName}</span>
             </h1>
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
           </Header>
