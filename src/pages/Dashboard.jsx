@@ -13,7 +13,7 @@ const Main = styled.main`
 `;
 
 const Content = styled.div`
-  
+  margin:auto;
 `;
 
 const Activity = styled.div`
@@ -24,7 +24,11 @@ const Activity = styled.div`
 
 const Graphics = styled.div`
 flex-grow:1;
-max-width:834px;`;
+max-width:834px;
+display:flex;
+flex-direction: column;
+gap: 28px;
+`;
 
 const Top = styled.div``;
 
@@ -80,7 +84,7 @@ function Dashboard() {
               </Top>
               <Bottom>
                 <SmallGraph>Session</SmallGraph>
-                <SmallGraph>Intensity Graph</SmallGraph>
+                <SmallGraph>Intensity</SmallGraph>
                 <SmallGraph>Score</SmallGraph>
               </Bottom>
             </Graphics>
