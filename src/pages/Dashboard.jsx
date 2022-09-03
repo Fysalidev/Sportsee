@@ -105,7 +105,7 @@ function Dashboard() {
         const user = await userData(id, api);
         const activity = await activityData(id, api);
         const average = await averageData(id, api);
-        const performance = await performanceData(id, api)
+        const performance = await performanceData(id, api);
         setUser(user);
         setActivity(activity);
         setAverage(average);
@@ -122,6 +122,7 @@ function Dashboard() {
   console.log(activity);
   console.log(average);
   console.log(performance);
+  console.log(isLoading)
 
   return (
     <Wrapper>
