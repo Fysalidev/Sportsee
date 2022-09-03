@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import Header from "./Header";
 import Dashboard from "../pages/Dashboard";
 import Error from "../pages/Error";
+import { ApiProvider } from "../utils/context";
 
 const AppWrapper = styled.div`
   flex-direction: column;
@@ -21,14 +22,16 @@ function App() {
   return (
     <AppWrapper>
       <BrowserRouter>
-        <Header />
-        <View>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/user/:id" element={<Dashboard />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
-        </View>
+        <ApiProvider>
+          <Header />
+          <View>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/user/:id" element={<Dashboard />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+          </View>
+        </ApiProvider>
       </BrowserRouter>
     </AppWrapper>
   );

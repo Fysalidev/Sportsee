@@ -1,5 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { useContext } from "react";
+import { ApiContext } from "../utils/context";
 
 const Wrapper = styled.div`
   display: flex;
@@ -61,19 +63,20 @@ const SwitchState = styled.span`
 `;
 
 function Switch() {
-  const [checked, setChecked] = useState(false);
+  const {toggleApi, api} = useContext(ApiContext)
+  console.log(api)
 
   const handleChange = () => {
-    setChecked(!checked);
+    toggleApi()
   };
 
   return (
     <Wrapper>
       <SwitchButton>
-        <Input type="checkbox" checked={checked} onChange={handleChange} />
+        <Input type="checkbox" checked={api} onChange={handleChange} />
         <span></span>
       </SwitchButton>
-      <SwitchState> {checked ? "Api" : "Mocked"}</SwitchState>
+      <SwitchState> {api ? "Api" : "Mocked"}</SwitchState>
     </Wrapper>
   );
 }

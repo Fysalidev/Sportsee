@@ -2,7 +2,8 @@ import styled from "styled-components";
 import VerticalLayout from "../components/VerticalLayout";
 import { useParams, useNavigate } from "react-router-dom";
 import { userData } from "../services/providers";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ApiContext } from "../utils/context";
 
 const Wrapper = styled.div`
   display: flex;
@@ -92,12 +93,13 @@ function Dashboard() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState({});
-  const [useMockedData, setApi] = useState(true);
+  /* const [useMockedData, setApi] = useState(true); */
+  const {api} = useContext(ApiContext)
 
   useEffect(() => {
     (async () => {
       try {
-        const user = await userData(id, useMockedData);
+        const user = await userData(id, api);
         setData(user);
         setIsLoading(false);
       } catch (error) {
@@ -105,7 +107,7 @@ function Dashboard() {
         navigate("/Error");
       }
     })();
-  }, [navigate, id, useMockedData]);
+  }, [navigate, id, api]);
 
   return (
     <Wrapper>
