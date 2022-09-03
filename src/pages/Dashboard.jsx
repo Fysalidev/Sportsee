@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import VerticalLayout from "../components/VerticalLayout";
 import { useParams, useNavigate } from "react-router-dom";
-import { userData } from "../services/providers";
+import { averageData, userData } from "../services/providers";
 import { activityData } from "../services/providers";
 import { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../utils/context";
@@ -94,16 +94,19 @@ function Dashboard() {
 
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState({});
-  const [activity, setActivity] = useState({})
-  const {api} = useContext(ApiContext)
-  
+  const [activity, setActivity] = useState({});
+  const [average, setAverage] = useState({});
+  const { api } = useContext(ApiContext);
+
   useEffect(() => {
     (async () => {
       try {
         const user = await userData(id, api);
-        const activity = await activityData(id,api)
+        const activity = await activityData(id, api);
+        const average = await averageData(id, api);
         setUser(user);
-        setActivity(activity)
+        setActivity(activity);
+        setAverage(average);
         setIsLoading(false);
       } catch (error) {
         console.log("error : ", error);
@@ -111,6 +114,10 @@ function Dashboard() {
       }
     })();
   }, [navigate, id, api]);
+
+  console.log(user);
+  console.log(activity);
+  console.log(average);
 
   return (
     <Wrapper>
@@ -147,4 +154,3 @@ function Dashboard() {
   );
 }
 export default Dashboard;
-

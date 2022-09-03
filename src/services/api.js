@@ -21,6 +21,7 @@ export const getAverageData = async (id, setup) => {
     ? `http://localhost:3000/user/${id}/average-sessions`
     : `../data/${id}/average.json`;
   const data = await fetchData(url);
+  console.log(data)
   return data;
 };
 
