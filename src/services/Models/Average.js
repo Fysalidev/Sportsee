@@ -12,3 +12,6 @@ export default class Average {
     return weekDay;
   }
 }
+
+
+

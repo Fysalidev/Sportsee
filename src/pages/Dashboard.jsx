@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import VerticalLayout from "../components/VerticalLayout";
 import { useParams, useNavigate } from "react-router-dom";
-import { averageData, userData } from "../services/providers";
+import { averageData, performanceData, userData } from "../services/providers";
 import { activityData } from "../services/providers";
 import { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../utils/context";
@@ -96,6 +96,7 @@ function Dashboard() {
   const [user, setUser] = useState({});
   const [activity, setActivity] = useState({});
   const [average, setAverage] = useState({});
+  const [performance, setPerformance] = useState({});
   const { api } = useContext(ApiContext);
 
   useEffect(() => {
@@ -104,9 +105,11 @@ function Dashboard() {
         const user = await userData(id, api);
         const activity = await activityData(id, api);
         const average = await averageData(id, api);
+        const performance = await performanceData(id, api)
         setUser(user);
         setActivity(activity);
         setAverage(average);
+        setPerformance(performance);
         setIsLoading(false);
       } catch (error) {
         console.log("error : ", error);
@@ -118,6 +121,7 @@ function Dashboard() {
   console.log(user);
   console.log(activity);
   console.log(average);
+  console.log(performance);
 
   return (
     <Wrapper>
