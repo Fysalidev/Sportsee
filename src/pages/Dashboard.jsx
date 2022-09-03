@@ -2,6 +2,7 @@ import styled from "styled-components";
 import VerticalLayout from "../components/VerticalLayout";
 import { useParams, useNavigate } from "react-router-dom";
 import { userData } from "../services/providers";
+import { activityData } from "../services/providers";
 import { useContext, useEffect, useState } from "react";
 import { ApiContext } from "../utils/context";
 
@@ -92,15 +93,17 @@ function Dashboard() {
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState({});
-  /* const [useMockedData, setApi] = useState(true); */
+  const [user, setUser] = useState({});
+  const [activity, setActivity] = useState({})
   const {api} = useContext(ApiContext)
-
+  
   useEffect(() => {
     (async () => {
       try {
         const user = await userData(id, api);
-        setData(user);
+        const activity = await activityData(id,api)
+        setUser(user);
+        setActivity(activity)
         setIsLoading(false);
       } catch (error) {
         console.log("error : ", error);
@@ -116,7 +119,7 @@ function Dashboard() {
         <Content>
           <Header>
             <h1>
-              Bonjour <span>{data.firstName}</span>
+              Bonjour <span>{user.firstName}</span>
             </h1>
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
           </Header>
@@ -144,3 +147,4 @@ function Dashboard() {
   );
 }
 export default Dashboard;
+
