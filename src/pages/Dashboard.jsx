@@ -1,16 +1,19 @@
+import styled from "styled-components";
+
+import { useContext, useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { ApiContext } from "../utils/context";
+import { activityData } from "../services/providers";
+import { averageData, performanceData, userData } from "../services/providers";
+
 import calories from "../assets/calories.png";
 import proteines from "../assets/proteines.png";
 import glucides from "../assets/glucides.png";
 import lipides from "../assets/lipides.png";
 
-import styled from "styled-components";
 import VerticalLayout from "../components/VerticalLayout";
 import ActivityCard from "../components/ActivityCard";
-import { useParams, useNavigate } from "react-router-dom";
-import { averageData, performanceData, userData } from "../services/providers";
-import { activityData } from "../services/providers";
-import { useContext, useEffect, useState } from "react";
-import { ApiContext } from "../utils/context";
+import ActivityGraph from "../components/ActivityGraph";
 
 const Wrapper = styled.div`
   display: flex;
@@ -103,6 +106,7 @@ function Dashboard() {
         const average = await averageData(id, api);
         const performance = await performanceData(id, api);
         setData({ user, activity, average, performance });
+        console.log(data)
         setIsLoading(false);
       } catch (error) {
         console.log("error : ", error);
@@ -127,9 +131,7 @@ function Dashboard() {
             </Header>
             <Activity>
               <Graphics>
-                <Top>
-                  <LargeGraph>Activity</LargeGraph>
-                </Top>
+                <ActivityGraph data = {data.activity} />
                 <Bottom>
                   <SmallGraph>Session</SmallGraph>
                   <SmallGraph>Intensity</SmallGraph>

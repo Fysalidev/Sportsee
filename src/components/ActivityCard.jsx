@@ -37,7 +37,6 @@ const Infos = styled.div`
 `;
 
 function ActivityCard({ name, unit, icon, data }) {
-  console.log(data);
   return (
     <Card>
       <Icon src={icon} alt="icon" />
