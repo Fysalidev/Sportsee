@@ -1,5 +1,11 @@
+import calories from "../assets/calories.png";
+import proteines from "../assets/proteines.png";
+import glucides from "../assets/glucides.png";
+import lipides from "../assets/lipides.png";
+
 import styled from "styled-components";
 import VerticalLayout from "../components/VerticalLayout";
+import ActivityCard from "../components/ActivityCard";
 import { useParams, useNavigate } from "react-router-dom";
 import { averageData, performanceData, userData } from "../services/providers";
 import { activityData } from "../services/providers";
@@ -76,28 +82,18 @@ const SmallGraph = styled.div`
 `;
 
 const Cards = styled.div`
-  background: yellow;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
-const Card = styled.div`
-  width: 258px;
-  height: 124px;
-  background: grey;
-`;
-
 function Dashboard() {
   const { id } = useParams();
+  const { api } = useContext(ApiContext);
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState({});
-  const [activity, setActivity] = useState({});
-  const [average, setAverage] = useState({});
-  const [performance, setPerformance] = useState({});
-  const { api } = useContext(ApiContext);
+  const [data, setData] = useState({});
 
   useEffect(() => {
     (async () => {
@@ -106,10 +102,7 @@ function Dashboard() {
         const activity = await activityData(id, api);
         const average = await averageData(id, api);
         const performance = await performanceData(id, api);
-        setUser(user);
-        setActivity(activity);
-        setAverage(average);
-        setPerformance(performance);
+        setData({ user, activity, average, performance });
         setIsLoading(false);
       } catch (error) {
         console.log("error : ", error);
@@ -118,43 +111,61 @@ function Dashboard() {
     })();
   }, [navigate, id, api]);
 
-  console.log(user);
-  console.log(activity);
-  console.log(average);
-  console.log(performance);
-  console.log(isLoading)
-
   return (
     <Wrapper>
       <VerticalLayout />
-      <Main>
-        <Content>
-          <Header>
-            <h1>
-              Bonjour <span>{user.firstName}</span>
-            </h1>
-            <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-          </Header>
-          <Activity>
-            <Graphics>
-              <Top>
-                <LargeGraph>Activity</LargeGraph>
-              </Top>
-              <Bottom>
-                <SmallGraph>Session</SmallGraph>
-                <SmallGraph>Intensity</SmallGraph>
-                <SmallGraph>Score</SmallGraph>
-              </Bottom>
-            </Graphics>
-            <Cards>
-              <Card>Calories</Card>
-              <Card>Protéines</Card>
-              <Card>Glucides</Card>
-              <Card>Lipides</Card>
-            </Cards>
-          </Activity>
-        </Content>
-      </Main>
+      {isLoading ? (
+        "Chargement de la page en cours... "
+      ) : (
+        <Main>
+          <Content>
+            <Header>
+              <h1>
+                Bonjour <span>{data.user.firstName}</span>
+              </h1>
+              <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+            </Header>
+            <Activity>
+              <Graphics>
+                <Top>
+                  <LargeGraph>Activity</LargeGraph>
+                </Top>
+                <Bottom>
+                  <SmallGraph>Session</SmallGraph>
+                  <SmallGraph>Intensity</SmallGraph>
+                  <SmallGraph>Score</SmallGraph>
+                </Bottom>
+              </Graphics>
+              <Cards>
+                <ActivityCard
+                  name="Calories"
+                  unit="kCal"
+                  icon={calories}
+                  data={data.user.keyData.calorieCount}
+                />
+                <ActivityCard
+                  name="Protéines"
+                  unit="g"
+                  icon={proteines}
+                  data={data.user.keyData.proteinCount}
+                />
+                <ActivityCard
+                  name="Glucides"
+                  unit="g"
+                  icon={glucides}
+                  data={data.user.keyData.carbohydrateCount}
+                />
+                <ActivityCard
+                  name="Lipides"
+                  unit="g"
+                  icon={lipides}
+                  data={data.user.keyData.lipidCount}
+                />
+              </Cards>
+            </Activity>
+          </Content>
+        </Main>
+      )}
     </Wrapper>
   );
 }

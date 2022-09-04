@@ -29,6 +29,5 @@ export async function averageData(id, setup) {
 export async function performanceData(id, setup) {
   const data = await getPerformanceData(id, setup);
   const performance = new Perfomance(data.data);
-  console.log(performance);
   return performance;
 }

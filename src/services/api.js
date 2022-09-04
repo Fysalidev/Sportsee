@@ -29,6 +29,5 @@ export const getPerformanceData = async (id, setup) => {
     ? `http://localhost:3000/user/${id}/performance`
     : `../data/${id}/performance.json`;
   const data = await fetchData(url);
-  console.log(data)
   return data;
 };
