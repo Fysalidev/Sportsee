@@ -9,7 +9,7 @@ const Card = styled.div`
   gap: 1.5rem;
   height: 124px;
   justify-content: center;
-  width: 258px;
+  ${'' /* width: 258px; */}
 `;
 
 const Icon = styled.img`

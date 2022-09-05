@@ -14,11 +14,13 @@ import lipides from "../assets/lipides.png";
 import VerticalLayout from "../components/VerticalLayout";
 import ActivityCard from "../components/ActivityCard";
 import ActivityGraph from "../components/ActivityGraph";
+import SessionGraph from "../components/SessionGraph";
+import IntensityGraph from "../components/IntensityGraph";
+import ScoreGraph from "../components/ScoreGraph";
 
 const Wrapper = styled.div`
   display: flex;
-  flex-grow: 1;
-  height: 100%;
+  ${'' /* height: 100%; */}
 `;
 
 const Main = styled.main`
@@ -26,9 +28,10 @@ const Main = styled.main`
 `;
 
 const Content = styled.section`
-  margin: 68px 0 0 109px;
+  margin: 5.14% 0 0 8.24%;
   display: flex;
   flex-direction: column;
+ ${'' /*  max-width: 1124px; */}
 `;
 
 const Header = styled.header`
@@ -54,40 +57,28 @@ const Header = styled.header`
 
 const Activity = styled.div`
   display: flex;
-  max-width: 1124px;
-  justify-content: space-between;
+  gap: 2rem;
+  ${'' /* justify-content: space-between; */}
 `;
 
 const Graphics = styled.div`
-  flex-grow: 1;
-  max-width: 834px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  width:68.78%;
 `;
 
-const Top = styled.div``;
-
-const LargeGraph = styled.div`
-  height: 320px;
-  background: blue;
-`;
-
-const Bottom = styled.div`
+const OtherGraphics = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-
-const SmallGraph = styled.div`
-  width: 258px;
-  height: 263px;
-  background: pink;
+  height:258px
 `;
 
 const Cards = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width:21.26%;
+  
 `;
 
 function Dashboard() {
@@ -106,7 +97,7 @@ function Dashboard() {
         const average = await averageData(id, api);
         const performance = await performanceData(id, api);
         setData({ user, activity, average, performance });
-        console.log(data)
+        console.log(data);
         setIsLoading(false);
       } catch (error) {
         console.log("error : ", error);
@@ -131,12 +122,12 @@ function Dashboard() {
             </Header>
             <Activity>
               <Graphics>
-                <ActivityGraph data = {data.activity} />
-                <Bottom>
-                  <SmallGraph>Session</SmallGraph>
-                  <SmallGraph>Intensity</SmallGraph>
-                  <SmallGraph>Score</SmallGraph>
-                </Bottom>
+                <ActivityGraph data={data.activity} />
+                <OtherGraphics>
+                  <SessionGraph />
+                  <IntensityGraph />
+                  <ScoreGraph />
+                </OtherGraphics>
               </Graphics>
               <Cards>
                 <ActivityCard

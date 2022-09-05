@@ -1,4 +1,3 @@
-import React, { PureComponent } from "react";
 import {
   BarChart,
   Bar,
@@ -11,30 +10,60 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-function ActivityGraph({data}) {
+function ActivityGraph({ data }) {
+  console.log(data.activity);
 
-    console.log(data.activity)
- 
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer height={320}>
       <BarChart
-        width={500}
-        height={300}
         data={data.activity}
         margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
+          top: 23,
+          right: 26,
+          left: 26,
+          bottom: 23,
         }}
+        barSize={7}
+        barGap={8}
+        barCategoryGap={54}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="day" />
-        <YAxis />
+        <CartesianGrid strokeDasharray="3 3" vertical={false} />
+        <XAxis
+          dataKey="day"
+          tickLine={false}
+          tick={{ fill: "#9B9EAC", fontWeight: 500, fontSize: 14 }}
+          tickMargin={14}
+          axisLine={false}
+        />
+        <YAxis
+          dataKey="kilogram"
+          tickLine={false}
+          orientation="right"
+          tick={{ fill: "#9B9EAC", fontWeight: 500, fontSize: 14 }}
+          tickMargin={20}
+          minTickGap={16}
+          axisLine={false}
+        />
+        
         <Tooltip />
-        <Legend />
-        <Bar dataKey="kilogram" fill="#282D30" />
-        <Bar dataKey="calories" fill="#E60000" />
+        <Legend
+          verticalAlign="top"
+          align="right"
+          iconType="circle"
+          height={60}
+        />
+        <Bar
+          dataKey="kilogram"
+          name="Poids (kg)"
+          fill="#282D30"
+          radius={[3, 3, 0, 0]}
+        />
+        <Bar
+          dataKey="calories"
+          name="Calories brulées (kCal)"
+          fill="#E60000"
+          radius={[3, 3, 0, 0]}
+        />
       </BarChart>
     </ResponsiveContainer>
   );
