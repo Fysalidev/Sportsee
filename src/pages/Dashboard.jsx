@@ -124,7 +124,7 @@ function Dashboard() {
               <Graphics>
                 <ActivityGraph data={data.activity} />
                 <OtherGraphics>
-                  <SessionGraph />
+                  <SessionGraph/>
                   <IntensityGraph />
                   <ScoreGraph />
                 </OtherGraphics>
