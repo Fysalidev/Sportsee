@@ -15,7 +15,7 @@ import VerticalLayout from "../components/VerticalLayout";
 import ActivityCard from "../components/ActivityCard";
 import ActivityGraph from "../components/ActivityGraph";
 import SessionGraph from "../components/SessionGraph";
-import IntensityGraph from "../components/IntensityGraph";
+import PerformanceGraph from "../components/PerformanceGraph";
 import ScoreGraph from "../components/ScoreGraph";
 
 const Wrapper = styled.div`
@@ -106,6 +106,8 @@ function Dashboard() {
     })();
   }, [navigate, id, api]);
 
+  console.log(data)
+
   return (
     <Wrapper>
       <VerticalLayout />
@@ -125,7 +127,7 @@ function Dashboard() {
                 <ActivityGraph data={data.activity} />
                 <OtherGraphics>
                   <SessionGraph/>
-                  <IntensityGraph />
+                  <PerformanceGraph data={data.performance} />
                   <ScoreGraph />
                 </OtherGraphics>
               </Graphics>
