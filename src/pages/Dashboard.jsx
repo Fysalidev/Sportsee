@@ -20,7 +20,7 @@ import ScoreGraph from "../components/ScoreGraph";
 
 const Wrapper = styled.div`
   display: flex;
-  ${'' /* height: 100%; */}
+  ${"" /* height: 100%; */}
 `;
 
 const Main = styled.main`
@@ -31,7 +31,7 @@ const Content = styled.section`
   margin: 5.14% 0 0 8.24%;
   display: flex;
   flex-direction: column;
- ${'' /*  max-width: 1124px; */}
+  ${"" /*  max-width: 1124px; */}
 `;
 
 const Header = styled.header`
@@ -58,27 +58,30 @@ const Header = styled.header`
 const Activity = styled.div`
   display: flex;
   gap: 2rem;
-  ${'' /* justify-content: space-between; */}
+  ${"" /* justify-content: space-between; */}
 `;
 
 const Graphics = styled.div`
   display: flex;
   flex-direction: column;
-  width:68.78%;
+  width: 68.78%;
 `;
 
 const OtherGraphics = styled.div`
   display: flex;
   justify-content: space-between;
-  height:258px
+`;
+
+const Graph = styled.div`
+  width: 30.9%;
+  height:263px;
 `;
 
 const Cards = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width:21.26%;
-  
+  width: 21.26%;
 `;
 
 function Dashboard() {
@@ -106,7 +109,7 @@ function Dashboard() {
     })();
   }, [navigate, id, api]);
 
-  console.log(data)
+  console.log(data);
 
   return (
     <Wrapper>
@@ -126,9 +129,15 @@ function Dashboard() {
               <Graphics>
                 <ActivityGraph data={data.activity} />
                 <OtherGraphics>
-                  <SessionGraph data={data.average.sessions}/>
-                  <PerformanceGraph data={data.performance} />
-                  <ScoreGraph />
+                  <Graph>
+                  <SessionGraph data={data.average.sessions} />
+                  </Graph>
+                  <Graph>
+                    <PerformanceGraph data={data.performance} />
+                  </Graph>
+                  <Graph>
+                    <ScoreGraph data={data.user.score} />
+                  </Graph>
                 </OtherGraphics>
               </Graphics>
               <Cards>

@@ -24,7 +24,7 @@ const CustomTooltipWrapper = styled.div`
   font-weight: 500;
   font-size: 7px;
   line-height: 24px;
-  text-align: center;
+  text-align:center;
 `;
 
 const CustomTooltip = ({ active, payload }) => {
@@ -40,6 +40,7 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 function ActivityGraph({ data }) {
+
   return (
     <Wrapper height={320}>
       <BarChart data={data.activity} barSize={7} barGap={8} barCategoryGap={57}>
@@ -73,7 +74,7 @@ function ActivityGraph({ data }) {
           tickCount={3}
         />
 
-        <Tooltip content={<CustomTooltip />} />
+        <Tooltip content={<CustomTooltip />}/>
         <Legend
           verticalAlign="top"
           iconType="circle"

@@ -1,74 +1,88 @@
-import {
-  ResponsiveContainer,
-  RadialBarChart,
-  RadialBar,
-} from "recharts";
+import { ResponsiveContainer, RadialBarChart, RadialBar , PolarAngleAxis} from "recharts";
 
-function ScoreGraph() {
- const data = [
-/*    {
-     name: "18-24",
-     uv: 40,
-     pv: 2400,
-     fill: "#8884d8",
-   },
-   {
-     name: "25-29",
-     uv: 50,
-     pv: 4567,
-     fill: "#83a6ed",
-   },
-   {
-     name: "30-34",
-     uv: 60,
-     pv: 1398,
-     fill: "#8dd1e1",
-   },
-   {
-     name: "35-39",
-     uv: 70,
-     pv: 9800,
-     fill: "#82ca9d",
-   },
-   {
-     name: "40-49",
-     uv: 80,
-     pv: 3908,
-     fill: "#a4de6c",
-   },
-   {
-     name: "50+",
-     uv: 90,
-     pv: 4800,
-     fill: "#d0ed57",
-   }, */
-   {
-     name: "unknow",
-     uv: 100,
-     pv: 4800,
-     fill: "#ffc658",
-   },
- ];
+function ScoreGraph({data}) {
+ 
+  console.log(data)
+
+  const formatData = [
+    {
+      score: data,
+      fill: "#E60000",
+    },
+  ];
 
   return (
-    <ResponsiveContainer>
+    <ResponsiveContainer width="100%" aspect={1}>
       <RadialBarChart
-        width={730}
-        height={250}
-        innerRadius="90%"
-        outerRadius="80%"
-        data={data}
-        startAngle={0}
-        endAngle={360}
+        cx="50%"
+        cy="50%"
+        style={{ backgroundColor: "#FBFBFB" }}
+        width="100%"
+        height="100%"
+        margin={{ top: 30, right: 30, bottom: 30, left: 30 }}
+        innerRadius={70}
+        barSize={10}
+        data={formatData}
+        startAngle={80}
+        endAngle={450}
       >
-        <RadialBar
-          minAngle={15}
-          label={{ fill: "#666", position: "insideStart" }}
-          background
-          clockWise={true}
-          dataKey="uv"
-          domain={[0,100]}
+        <circle cx="50%" cy="50%" fill="white" r="82"></circle>
+        <PolarAngleAxis
+          type="number"
+          domain={[0, 100]}
+          angleAxisId={1}
+          tick={false}
         />
+        <RadialBar
+          background
+          dataKey="score"
+          angleAxisId={1}
+          fill="#E60000"
+          cornerRadius="10"
+          data={[data[0]]}
+        />
+        <text
+          className="scoreSize"
+          fontWeight="700"
+          fontSize={26}
+          fill="#282D30"
+          x="50%"
+          y="45%"
+          textAnchor="middle"
+        >{`${data}%`}</text>
+        <text
+          className="graphTitle"
+          fontWeight="500"
+          fill="#74798C"
+          x="50%"
+          y="55%"
+          textAnchor="middle"
+        >
+          de votre
+        </text>
+        <text
+          className="graphTitle"
+          fontWeight="500"
+          fill="#74798C"
+          x="50%"
+          y="65%"
+          textAnchor="middle"
+        >
+          objectif
+        </text>
+        <text
+          className="graphTitle"
+          x="12%"
+          y="15%"
+          width={147}
+          height={48}
+          textAnchor="start"
+          dominantBaseline="middle"
+          fill="#20253A"
+          style={{ fontWeight: 500 }}
+        >
+          Score{" "}
+        </text>
       </RadialBarChart>
     </ResponsiveContainer>
   );
