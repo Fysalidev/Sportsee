@@ -12,7 +12,7 @@ import {
 } from "recharts";
 
 const Wrapper = styled.div`
-  min-width: 254px;
+  min-width: 228px;
   border-radius: 5px;
   overflow: hidden;
   background:red;

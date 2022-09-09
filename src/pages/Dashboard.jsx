@@ -28,7 +28,7 @@ const Main = styled.main`
 `;
 
 const Content = styled.section`
-  margin: 5.14% 0 0 8.24%;
+  margin: 68px 0 0 8.24%;
   display: flex;
   flex-direction: column;
   ${"" /*  max-width: 1124px; */}

@@ -9,7 +9,7 @@ import {
 } from "recharts";
 
 const Wrapper = styled.div`
-  min-width: 254px;
+  min-width: 228px;
   height: 263px;
   background: #282d30;
   border-radius: 5px;
@@ -29,7 +29,7 @@ function PerformanceGraph({ data }) {
     <Wrapper>
       <ResponsiveContainer width="100%" height={263}>
         <RadarChart
-          outerRadius={90}
+          outerRadius={75}
           innerRadius={10}
           data={data.performance}
           cx="50%"
