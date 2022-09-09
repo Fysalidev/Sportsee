@@ -16,13 +16,13 @@ function ScoreGraph({data}) {
       <RadialBarChart
         cx="50%"
         cy="50%"
-        style={{ backgroundColor: "#FBFBFB" }}
+        style={{ backgroundColor: "#FBFBFB" }}  
         width="100%"
         height="100%"
         margin={{ top: 30, right: 30, bottom: 30, left: 30 }}
         innerRadius={70}
         barSize={10}
-        data={formatData}
+        data={data}
         startAngle={80}
         endAngle={450}
       >
@@ -35,7 +35,7 @@ function ScoreGraph({data}) {
         />
         <RadialBar
           background
-          dataKey="score"
+          dataKey="uv"
           angleAxisId={1}
           fill="#E60000"
           cornerRadius="10"

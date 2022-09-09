@@ -115,7 +115,6 @@ function ActivityGraph({ data }) {
             fontWeight: 500,
             fontSize: 15,
             fontFamily: "roboto",
-            fontWeight: 500,
           }}
         >
           Activité quotidienne
