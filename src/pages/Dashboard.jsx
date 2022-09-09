@@ -69,19 +69,22 @@ const Graphics = styled.div`
 
 const OtherGraphics = styled.div`
   display: flex;
-  justify-content: space-between;
+  gap:1%;
+  
 `;
 
-const Graph = styled.div`
+/* const Graph = styled.div`
   width: 30.9%;
   height:263px;
 `;
+ */
 
 const Cards = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 21.26%;
+  flex-grow:1
 `;
 
 function Dashboard() {
@@ -129,15 +132,9 @@ function Dashboard() {
               <Graphics>
                 <ActivityGraph data={data.activity} />
                 <OtherGraphics>
-                  <Graph>
                   <SessionGraph data={data.average.sessions} />
-                  </Graph>
-                  <Graph>
-                    <PerformanceGraph data={data.performance} />
-                  </Graph>
-                  <Graph>
-                    <ScoreGraph data={data.user.score} />
-                  </Graph>
+                  <PerformanceGraph data={data.performance} />
+                  <ScoreGraph data={data.user.score} />
                 </OtherGraphics>
               </Graphics>
               <Cards>
