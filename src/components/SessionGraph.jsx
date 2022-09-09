@@ -61,49 +61,53 @@ function SessionGraph({ data }) {
         data={data}
         style={{ background: "#FF0000", opacity: 0.9 }}
         margin={{
-          top: 10,
+          top: 0,
           right: 0,
-          left: -60,
+          left: 0,
           bottom: 10,
         }}
       >
         <CartesianGrid
           strokeDasharray="3 3"
-          width="100%"
           vertical={false}
           horizontal={false}
         />
+
+        <Line
+          type="natural"
+          dataKey="sessionLength"
+          dot={false}
+          activeDot={{ r: 4 }}
+          stroke="#FFFFFF"
+          strokeWidth={2}
+          opacity={0.7}
+        />
+
         <XAxis
           dataKey="day"
           axisLine={false}
-          tick={{ fill: "#FFFFFF", fontWeight: 500, fontSize: 12 }}
           tickLine={false}
+          tick={{ fill: "#FFFFFF", fontWeight: 500, fontSize: 12 }}
           interval="preserveStartEnd"
           fillOpacity={0.7}
-          style={{ transform: "scale(0.9)", transformOrigin: "bottom" }}
+          padding={{ right: 20, left: 20 }}
         />
+
         <YAxis
           axisLine={false}
+          hide={true}
           tickLine={false}
           tick={false}
-          domain={["dataMin - 5", "dataMax + 10"]}
+          domain={["dataMin - 10", "dataMax + 10"]}
+          padding={{ top: 70, bottom: 20 }}
         />
         <Tooltip
           content={<CustomTooltip />}
           cursor={<CustomCursor />}
-          wrapperStyle={{ background: "yellow", outline: "none" }}
+          wrapperStyle={{ background: "#FFFFFF", outline: "none" }}
         />
-        <Line
-          type="natural"
-          dataKey="sessionLength"
-          stroke="#FFFFFF"
-          opacity={0.7}
-          strokeWidth={2}
-          dot={false}
-          activeDot={{ r: 4 }}
-        />
+
         <text
-          className="graphTitle"
           x="8%"
           y="10%"
           textAnchor="start"
@@ -114,7 +118,6 @@ function SessionGraph({ data }) {
           Durée moyenne des
         </text>
         <text
-          className="graphTitle"
           x="8%"
           y="18%"
           textAnchor="start"
