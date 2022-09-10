@@ -20,6 +20,7 @@ import ScoreGraph from "../components/ScoreGraph";
 
 const Wrapper = styled.div`
   display: flex;
+  min-height: 100%;
 `;
 
 const Main = styled.main`
@@ -66,22 +67,15 @@ const Graphics = styled.div`
 
 const OtherGraphics = styled.div`
   display: flex;
-  gap:1%;
-  
+  gap: 1%;
 `;
-
-/* const Graph = styled.div`
-  width: 30.9%;
-  height:263px;
-`;
- */
 
 const Cards = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 21.26%;
-  flex-grow:1
+  flex-grow: 1;
 `;
 
 function Dashboard() {
