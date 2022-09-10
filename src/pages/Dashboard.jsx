@@ -20,7 +20,6 @@ import ScoreGraph from "../components/ScoreGraph";
 
 const Wrapper = styled.div`
   display: flex;
-  ${"" /* height: 100%; */}
 `;
 
 const Main = styled.main`
@@ -31,7 +30,6 @@ const Content = styled.section`
   margin: 68px 0 0 8.24%;
   display: flex;
   flex-direction: column;
-  ${"" /*  max-width: 1124px; */}
 `;
 
 const Header = styled.header`
@@ -58,7 +56,6 @@ const Header = styled.header`
 const Activity = styled.div`
   display: flex;
   gap: 2rem;
-  ${"" /* justify-content: space-between; */}
 `;
 
 const Graphics = styled.div`
