@@ -22,7 +22,6 @@ const Wrapper = styled.div`
 const CustomTooltipSession = styled.div`
   width: 39px;
   height: 25px;
-  ${"" /* background: #ffffff; */}
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -75,6 +74,7 @@ function SessionGraph({ data }) {
             strokeDasharray="3 3"
             vertical={false}
             horizontal={false}
+            xOuterPadding={1}
           />
 
           <Line
@@ -94,7 +94,7 @@ function SessionGraph({ data }) {
             tick={{ fill: "#FFFFFF", fontWeight: 500, fontSize: 12 }}
             interval="preserveStartEnd"
             fillOpacity={0.7}
-            padding={{ right: 0, left: 0 }}
+            padding={{ right: 20, left: 20 }}
           />
 
           <YAxis
@@ -103,7 +103,7 @@ function SessionGraph({ data }) {
             tickLine={false}
             tick={false}
             domain={["dataMin - 10", "dataMax + 10"]}
-            padding={{ top:0, bottom: 0 }}
+            padding={{ top: 0, bottom: 0 }}
           />
           <Tooltip
             content={<CustomTooltip />}
@@ -117,7 +117,7 @@ function SessionGraph({ data }) {
             textAnchor="start"
             dominantBaseline="middle"
             fill="#FFFFFF"
-            style={{ fontWeight: 500, opacity: 0.5 }}
+            style={{ fontSize: 14, fontWeight: 500, opacity: 0.5 }}
           >
             Durée moyenne des
           </text>
@@ -128,6 +128,7 @@ function SessionGraph({ data }) {
             dominantBaseline="middle"
             fill="#FFFFFF"
             style={{
+              fontSize: 14,
               fontWeight: 500,
               opacity: 0.5,
             }}
