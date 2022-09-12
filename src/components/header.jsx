@@ -8,8 +8,7 @@ const HeaderWrapper = styled.header`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: white;
   display: flex;
-  flex-grow:1;
-  max-height:91px;
+  height:8.9%;
 `;
 
 const Logo = styled.img`

@@ -34,15 +34,15 @@ const Content = styled.section`
 `;
 
 const Header = styled.header`
-  ${'' /* height: 166px; */}
   font-family: "Roboto";
   font-style: normal;
+
   & h1 {
     line-height: 24px;
     font-size: 48px;
     font-weight: 500;
-    padding: 1rem 0 2rem 0;
   }
+
   & span {
     color: red;
   }
@@ -51,12 +51,14 @@ const Header = styled.header`
     line-height: 24px;
     font-size: 18px;
     font-weight: 400;
+    margin-top:3.8%;
   }
 `;
 
 const Activity = styled.div`
   display: flex;
   gap: 2rem;
+  margin-top:5.35%;
 `;
 
 const Graphics = styled.div`

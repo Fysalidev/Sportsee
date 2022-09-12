@@ -8,7 +8,7 @@ import weightlifting from "../assets/weightlifting.png";
 const Wrapper = styled.div`
   background-color: black;
   min-height: 100%;
-  width: 117px;
+  width: 8.12%;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
@@ -21,6 +21,7 @@ align-items:center;
 justify-content:center;
 flex-grow:1;
 gap:1.25rem;
+margin-top:30%;
 `;
 
 const Item = styled.li`
