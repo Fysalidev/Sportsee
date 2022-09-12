@@ -68,6 +68,7 @@ const Graphics = styled.div`
 const OtherGraphics = styled.div`
   display: flex;
   gap: 1%;
+  height:263px;
 `;
 
 const Cards = styled.div`

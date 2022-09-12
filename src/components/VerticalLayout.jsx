@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   width: 117px;
   display:flex;
   flex-direction:column;
+  justify-content:space-between;
 `;
 
 const ButtonsWrapper = styled.ul`
@@ -18,9 +19,12 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
+flex-grow:1;
+gap:1.25rem;
 `;
 
 const Item = styled.li`
+
 padding:0;
 
 `;
@@ -33,13 +37,24 @@ const Btn = styled.button`
 `;
 
 const Copyright = styled.div`
-width:10rem;
-position:absolute;
-bottom:0;
-& p {
-color:#FFFFFF;
-transform: rotate(270deg);
-}
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & p {
+    color: #ffffff;
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    bottom: 0;
+    margin: 0 0 0 0;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    padding: 3rem 0 1rem 0;
+  }
 `;
 
 function VerticalLayout() {

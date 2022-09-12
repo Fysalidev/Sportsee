@@ -12,7 +12,8 @@ import {
 } from "recharts";
 
 const Wrapper = styled.div`
-  min-width: 228px;
+  ${'' /* min-width: 228px; */}
+  width:29%;
   border-radius: 5px;
   overflow: hidden;
   background:red;
@@ -59,7 +60,7 @@ const CustomCursor = ({ points }) => {
 function SessionGraph({ data }) {
   return (
     <Wrapper>
-      <ResponsiveContainer width="100%" height={263}>
+      <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={data}
           style={{ background: "#FF0000", opacity: 0.9 }}
@@ -94,7 +95,7 @@ function SessionGraph({ data }) {
             tick={{ fill: "#FFFFFF", fontWeight: 500, fontSize: 12 }}
             interval="preserveStartEnd"
             fillOpacity={0.7}
-            padding={{ right: 20, left: 20 }}
+            padding={{ right: 0, left: 0 }}
           />
 
           <YAxis

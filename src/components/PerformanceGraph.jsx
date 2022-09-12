@@ -9,8 +9,9 @@ import {
 } from "recharts";
 
 const Wrapper = styled.div`
-  min-width: 228px;
-  height: 263px;
+  ${'' /* min-width: 228px; */}
+  width:29%;
+  ${'' /* height: 263px; */}
   background: #282d30;
   border-radius: 5px;
   overflow: hidden;
@@ -27,17 +28,13 @@ const Wrapper = styled.div`
 function PerformanceGraph({ data }) {
   return (
     <Wrapper>
-      <ResponsiveContainer width="100%" height={263}>
+      <ResponsiveContainer width="100%" height="100%">
         <RadarChart
           outerRadius={75}
           innerRadius={10}
           data={data.performance}
           cx="50%"
           cy="50%"
-          //style={{ background: "#282D30", color: "#FFFFFF" }}
-          //outerRadius="80%"
-          //margin={{top: 0,right: 0,left:0,bottom: 0,}}
-          //aspect={1}
         >
           <PolarGrid 
           radialLines={false} />

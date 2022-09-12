@@ -5,7 +5,8 @@ const Wrapper = styled.div`
   background: #fbfbfb;
   border-radius: 5px;
   flex-grow: 1;
-  min-width: 228px;
+  ${'' /* min-width: 228px; */}
+  width:30%;
   overflow: hidden;
   position: relative;
 `;
@@ -86,10 +87,12 @@ function ScoreGraph({ data }) {
         </Objectif>
         <Comment>de votre objectif</Comment>
       </Content>
-      <ResponsiveContainer width="100%" height={263}>
+      <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
-          innerRadius="50%"
-          outerRadius="80%"
+          outerRadius={90}
+          innerRadius={70}
+          //innerRadius="50%"
+          //outerRadius="80%"
           data={tab}
           startAngle={-280}
           endAngle={80}
