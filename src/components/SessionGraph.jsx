@@ -12,12 +12,12 @@ import {
 } from "recharts";
 
 const Wrapper = styled.div`
-  ${'' /* min-width: 228px; */}
-  width:29%;
+  width:26%;
+  height:50%;
   border-radius: 5px;
   overflow: hidden;
   background:red;
-  flex-grow:1
+${'' /*   flex-grow:1 */}
 `;
 
 const CustomTooltipSession = styled.div`

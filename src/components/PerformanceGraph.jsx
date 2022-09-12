@@ -9,9 +9,9 @@ import {
 } from "recharts";
 
 const Wrapper = styled.div`
-  ${'' /* min-width: 228px; */}
-  width:29%;
-  ${'' /* height: 263px; */}
+  
+  width:26%;
+  height:50%;
   background: #282d30;
   border-radius: 5px;
   overflow: hidden;
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   font-weight: 500;
   font-size: 12px;
   line-height: 24px;
-  flex-grow:1;
+  ${'' /* flex-grow:1; */}
   
 `;
 

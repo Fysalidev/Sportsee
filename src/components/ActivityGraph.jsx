@@ -42,7 +42,7 @@ const CustomTooltip = ({ active, payload }) => {
 function ActivityGraph({ data }) {
 
   return (
-    <Wrapper width="100%" height="50%">
+    <Wrapper width="100%" height="70%">
       <BarChart data={data.activity} barSize={7} barGap={8} barCategoryGap={57}>
         <CartesianGrid strokeDasharray="3 3" vertical={false} />
         <XAxis

@@ -31,6 +31,7 @@ const Content = styled.section`
   margin: 5.14% 0 0 8.24%;
   display: flex;
   flex-direction: column;
+  height:100%;
 `;
 
 const Header = styled.header`
@@ -59,18 +60,20 @@ const Activity = styled.div`
   display: flex;
   gap: 2rem;
   margin-top:5.35%;
+  height:65%;
 `;
 
 const Graphics = styled.div`
   display: flex;
   flex-direction: column;
   width: 68.78%;
+  height: 100%;
 `;
 
 const OtherGraphics = styled.div`
   display: flex;
   gap: 1%;
-  height:50%;
+  height:100%;
 `;
 
 const Cards = styled.div`

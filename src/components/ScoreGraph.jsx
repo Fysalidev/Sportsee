@@ -4,9 +4,10 @@ import { ResponsiveContainer, RadialBarChart, RadialBar } from "recharts";
 const Wrapper = styled.div`
   background: #fbfbfb;
   border-radius: 5px;
-  flex-grow: 1;
+ ${'' /*  flex-grow: 1; */}
   ${'' /* min-width: 228px; */}
-  width:30%;
+  width:26%;
+  height:50%;
   overflow: hidden;
   position: relative;
 `;
