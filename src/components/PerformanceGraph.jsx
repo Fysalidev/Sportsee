@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   font-weight: 500;
   font-size: 12px;
   line-height: 24px;
-  flex-grow:1
+  flex-grow:1;
   
 `;
 

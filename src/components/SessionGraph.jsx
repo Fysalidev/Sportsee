@@ -95,7 +95,7 @@ function SessionGraph({ data }) {
             tick={{ fill: "#FFFFFF", fontWeight: 500, fontSize: 12 }}
             interval="preserveStartEnd"
             fillOpacity={0.7}
-            padding={{ right: 0, left: 0 }}
+            padding={{ right: 20, left: 20 }}
           />
 
           <YAxis

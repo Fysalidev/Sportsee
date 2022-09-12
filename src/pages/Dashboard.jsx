@@ -20,7 +20,7 @@ import ScoreGraph from "../components/ScoreGraph";
 
 const Wrapper = styled.div`
   display: flex;
-  min-height: 100%;
+  height: 100%;
 `;
 
 const Main = styled.main`
@@ -28,13 +28,13 @@ const Main = styled.main`
 `;
 
 const Content = styled.section`
-  margin: 68px 0 0 8.24%;
+  margin: 5.14% 0 0 8.24%;
   display: flex;
   flex-direction: column;
 `;
 
 const Header = styled.header`
-  height: 166px;
+  ${'' /* height: 166px; */}
   font-family: "Roboto";
   font-style: normal;
   & h1 {
@@ -68,7 +68,7 @@ const Graphics = styled.div`
 const OtherGraphics = styled.div`
   display: flex;
   gap: 1%;
-  height:263px;
+  height:50%;
 `;
 
 const Cards = styled.div`

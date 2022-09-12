@@ -10,7 +10,7 @@ import { ApiProvider } from "../utils/context";
 const AppWrapper = styled.div`
   flex-direction: column;
   display: flex;
-  height: 100vh;
+  height: 100%;
   width: 100%;
 `;
 
@@ -22,8 +22,8 @@ function App() {
   return (
     <AppWrapper>
       <BrowserRouter>
+      <Header />
         <ApiProvider>
-          <Header />
           <View>
             <Routes>
               <Route path="/" element={<Home />} />
