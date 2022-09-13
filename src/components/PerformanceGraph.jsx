@@ -9,9 +9,8 @@ import {
 } from "recharts";
 
 const Wrapper = styled.div`
-  
-  width:26%;
-  height:50%;
+  width: 31%;
+  ${"" /* height:50%; */}
   background: #282d30;
   border-radius: 5px;
   overflow: hidden;
@@ -21,33 +20,33 @@ const Wrapper = styled.div`
   font-weight: 500;
   font-size: 12px;
   line-height: 24px;
-  ${'' /* flex-grow:1; */}
-  
+  ${"" /* flex-grow:1; */}
 `;
 
 function PerformanceGraph({ data }) {
   return (
     <Wrapper>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer >
         <RadarChart
-          outerRadius={75}
-          innerRadius={10}
+          outerRadius="58%"
+          innerRadius="5%"
           data={data.performance}
           cx="50%"
           cy="50%"
         >
           <PolarGrid 
-          radialLines={false} />
+            radialLines={false}
+            outerRadius="10%"
+            />
 
           <PolarAngleAxis
             dataKey="kind"
-            //style={{ color: "#fff" }}
             stroke={"#fff"}
             tickLine={false}
-            radius={10}
+            radius="5%"
             fontSize={12}
             strokeWidth={1}
-            axisLine={false}
+            axisLine={true}
           />
 
           <Radar

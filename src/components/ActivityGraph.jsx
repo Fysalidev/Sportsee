@@ -24,7 +24,8 @@ const CustomTooltipWrapper = styled.div`
   font-weight: 500;
   font-size: 7px;
   line-height: 24px;
-  text-align:center;
+  text-align: center;
+  outline: none;
 `;
 
 const CustomTooltip = ({ active, payload }) => {
@@ -40,9 +41,8 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 function ActivityGraph({ data }) {
-
   return (
-    <Wrapper width="100%" height="70%">
+    <Wrapper width="100%" height="52.38%">
       <BarChart data={data.activity} barSize={7} barGap={8} barCategoryGap={57}>
         <CartesianGrid strokeDasharray="3 3" vertical={false} />
         <XAxis
@@ -74,7 +74,10 @@ function ActivityGraph({ data }) {
           tickCount={3}
         />
 
-        <Tooltip content={<CustomTooltip />}/>
+        <Tooltip
+          content={<CustomTooltip />}
+          wrapperStyle={{ outline: "none" }}
+        />
         <Legend
           verticalAlign="top"
           iconType="circle"

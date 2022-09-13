@@ -6,9 +6,9 @@ const Wrapper = styled.div`
   border-radius: 5px;
  ${'' /*  flex-grow: 1; */}
   ${'' /* min-width: 228px; */}
-  width:26%;
-  height:50%;
-  overflow: hidden;
+  width:31%;
+${'' /*   height:50%;
+ */}  overflow: hidden;
   position: relative;
 `;
 
@@ -21,7 +21,7 @@ const Title = styled.h2`
   left: 20px;
   line-height: 24px;
   position: absolute;
-  top: 15px;
+  top: 8px;
 `;
 
 const Content = styled.div`
@@ -90,10 +90,10 @@ function ScoreGraph({ data }) {
       </Content>
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
-          outerRadius={90}
-          innerRadius={70}
-          //innerRadius="50%"
-          //outerRadius="80%"
+          //outerRadius={90}
+          //innerRadius={70}
+          innerRadius="50%"
+          outerRadius="80%"
           data={tab}
           startAngle={-280}
           endAngle={80}

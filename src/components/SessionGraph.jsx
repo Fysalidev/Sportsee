@@ -12,8 +12,8 @@ import {
 } from "recharts";
 
 const Wrapper = styled.div`
-  width:26%;
-  height:50%;
+  width:31%;
+  ${'' /* height:50%; */}
   border-radius: 5px;
   overflow: hidden;
   background:red;
@@ -65,10 +65,10 @@ function SessionGraph({ data }) {
           data={data}
           style={{ background: "#FF0000", opacity: 0.9 }}
           margin={{
-            top: 0,
+            top: 25,
             right: 0,
             left: 0,
-            bottom: 10,
+            bottom: 25,
           }}
         >
           <CartesianGrid
@@ -95,7 +95,7 @@ function SessionGraph({ data }) {
             tick={{ fill: "#FFFFFF", fontWeight: 500, fontSize: 12 }}
             interval="preserveStartEnd"
             fillOpacity={0.7}
-            padding={{ right: 20, left: 20 }}
+            padding={{ right: 0, left: 0 }}
           />
 
           <YAxis

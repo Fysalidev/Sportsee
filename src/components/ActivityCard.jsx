@@ -6,9 +6,10 @@ const Card = styled.div`
   border-radius: 5px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   display: flex;
-  gap: 1.5rem;
-  height: 124px;
-  justify-content: center;
+  gap: 5%;
+  padding-left:7%;
+  height: 20.3%;
+  justify-content: flex-start;
   ${'' /* width: 258px; */}
 `;
 

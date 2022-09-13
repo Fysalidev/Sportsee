@@ -28,10 +28,10 @@ const Main = styled.main`
 `;
 
 const Content = styled.section`
-  margin: 5.14% 0 0 8.24%;
+  margin: 0 6.805% 0 8.24%;
   display: flex;
   flex-direction: column;
-  height:100%;
+  height: 100%;
 `;
 
 const Header = styled.header`
@@ -42,6 +42,7 @@ const Header = styled.header`
     line-height: 24px;
     font-size: 48px;
     font-weight: 500;
+    margin-top:5.14%;
   }
 
   & span {
@@ -58,30 +59,36 @@ const Header = styled.header`
 
 const Activity = styled.div`
   display: flex;
-  gap: 2rem;
+  gap: 3%;
   margin-top:5.35%;
-  height:65%;
+  height:65.5%;
+  ${'' /* border:solid 2px red; */}
 `;
 
 const Graphics = styled.div`
+  width: 74.29%;
+  max-height:611px;
   display: flex;
   flex-direction: column;
-  width: 68.78%;
-  height: 100%;
+  gap: 4.75%;
 `;
 
 const OtherGraphics = styled.div`
   display: flex;
+  justify-content: space-between;
   gap: 1%;
-  height:100%;
+  ${'' /* border: solid 2px green; */}
+  height:43.05%;
 `;
 
 const Cards = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 21.26%;
-  flex-grow: 1;
+  max-height:611px;
+  width: 23%;
+  ${'' /* flex-grow: 1; */}
+  ${'' /* border: solid 2px orange; */}
 `;
 
 function Dashboard() {
