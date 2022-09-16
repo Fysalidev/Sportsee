@@ -28,10 +28,10 @@ const Main = styled.main`
 `;
 
 const Content = styled.section`
-  margin: 0 6.805% 0 8.24%;
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin: 0 6.805% 0 8.24%;
 `;
 
 const Header = styled.header`
@@ -39,10 +39,10 @@ const Header = styled.header`
   font-style: normal;
 
   & h1 {
-    line-height: 24px;
     font-size: 48px;
     font-weight: 500;
-    margin-top:5.14%;
+    line-height: 24px;
+    margin-top: 5.14%;
   }
 
   & span {
@@ -50,46 +50,47 @@ const Header = styled.header`
   }
 
   & p {
-    line-height: 24px;
     font-size: 18px;
     font-weight: 400;
-    margin-top:3.8%;
+    line-height: 24px;
+    margin-top: 3.8%;
   }
 `;
 
 const Activity = styled.div`
   display: flex;
   gap: 3%;
-  margin-top:5.35%;
-  height:65.5%;
-  ${'' /* border:solid 2px red; */}
+  height: 65.5%;
+  margin-top: 5.35%;
 `;
 
 const Graphics = styled.div`
-  width: 74.29%;
-  max-height:611px;
   display: flex;
   flex-direction: column;
   gap: 4.75%;
+  max-height: 611px;
+  width: 74.29%;
 `;
 
 const OtherGraphics = styled.div`
   display: flex;
-  justify-content: space-between;
   gap: 1%;
-  ${'' /* border: solid 2px green; */}
-  height:43.05%;
+  height: 43.05%;
+  justify-content: space-between;
 `;
 
 const Cards = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-height:611px;
+  max-height: 611px;
   width: 23%;
-  ${'' /* flex-grow: 1; */}
-  ${'' /* border: solid 2px orange; */}
 `;
+
+/**
+ * Create Dashboard page
+ * @returns {JSX.Element} Dashboard component
+ */
 
 function Dashboard() {
   const { id } = useParams();
@@ -107,7 +108,6 @@ function Dashboard() {
         const average = await averageData(id, api);
         const performance = await performanceData(id, api);
         setData({ user, activity, average, performance });
-        console.log(data);
         setIsLoading(false);
       } catch (error) {
         console.log("error : ", error);
@@ -115,8 +115,6 @@ function Dashboard() {
       }
     })();
   }, [navigate, id, api]);
-
-  console.log(data);
 
   return (
     <Wrapper>

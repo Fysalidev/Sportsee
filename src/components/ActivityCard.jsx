@@ -7,10 +7,9 @@ const Card = styled.div`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   display: flex;
   gap: 5%;
-  padding-left:7%;
   height: 20.3%;
   justify-content: flex-start;
-  ${'' /* width: 258px; */}
+  padding-left: 7%;
 `;
 
 const Icon = styled.img`
@@ -21,21 +20,26 @@ const Icon = styled.img`
 const Infos = styled.div`
   & p {
     font-family: "Roboto";
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    font-size: 20px;
     line-height: 24px;
   }
 
   & h2 {
+    color: #74798c;
     font-family: "Roboto";
+    font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
     line-height: 24px;
-    color: #74798c;
   }
 `;
+
+/**
+ * Create activity card
+ * @returns {JSX.Element} ActivityCard component
+ */
 
 function ActivityCard({ name, unit, icon, data }) {
   return (

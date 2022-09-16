@@ -36,6 +36,11 @@ const Root = styled(Link)`
   }
 `;
 
+/**
+ * Create Error404 page
+ * @returns {JSX.Element} Error component
+ */
+
 function Error() {
   return (
     <Main>

@@ -1,62 +1,64 @@
 import styled from "styled-components";
 
-import yoga from '../assets/yoga.png'
+import yoga from "../assets/yoga.png";
 import swimming from "../assets/swimming.png";
 import cycle from "../assets/cycle.png";
 import weightlifting from "../assets/weightlifting.png";
 
 const Wrapper = styled.div`
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 100%;
   width: 8.12%;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
 `;
 
 const ButtonsWrapper = styled.ul`
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-flex-grow:1;
-gap:1.25rem;
-margin-top:30%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 1.25rem;
+  justify-content: center;
+  margin-top: 30%;
 `;
 
 const Item = styled.li`
-
-padding:0;
-
+  padding: 0;
 `;
 
 const Btn = styled.button`
   border: none;
-  padding: 0;
   border-radius: 6px;
-  overflow:hidden;
+  overflow: hidden;
+  padding: 0;
 `;
 
 const Copyright = styled.div`
- 
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 
   & p {
-    color: #ffffff;
-    writing-mode: vertical-lr;
-    transform: rotate(-180deg);
     bottom: 0;
-    margin: 0 0 0 0;
+    color: #ffffff;
     font-family: "Roboto";
+    font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    font-size: 12px;
     line-height: 24px;
+    margin: 0 0 0 0;
     padding: 3rem 0 1rem 0;
+    transform: rotate(-180deg);
+    writing-mode: vertical-lr;
   }
 `;
+
+/**
+ * Create Vertical Layout
+ * @returns {JSX.Element} VerticalLayout component
+ */
 
 function VerticalLayout() {
   return (
@@ -83,7 +85,9 @@ function VerticalLayout() {
           </Btn>
         </Item>
       </ButtonsWrapper>
-      <Copyright><p>Copyright SportSee 2022</p></Copyright>
+      <Copyright>
+        <p>Copyright SportSee 2022</p>
+      </Copyright>
     </Wrapper>
   );
 }

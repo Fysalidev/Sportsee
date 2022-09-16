@@ -8,14 +8,14 @@ const HeaderWrapper = styled.header`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: white;
   display: flex;
-  height:8.9%;
+  height: 8.9%;
 `;
 
 const Logo = styled.img`
   height: 61px;
+  margin-left: 29px;
   object-fit: cover;
   object-position: center;
-  margin-left: 29px;
   width: 178px;
 `;
 
@@ -45,6 +45,11 @@ const Link = styled(NavLink)`
     color: red;
   }
 `;
+
+/**
+ * Create Header
+ * @returns {JSX.Element} Header component
+ */
 
 function Header() {
   return (

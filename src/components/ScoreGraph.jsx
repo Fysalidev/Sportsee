@@ -4,12 +4,9 @@ import { ResponsiveContainer, RadialBarChart, RadialBar } from "recharts";
 const Wrapper = styled.div`
   background: #fbfbfb;
   border-radius: 5px;
- ${'' /*  flex-grow: 1; */}
-  ${'' /* min-width: 228px; */}
-  width:31%;
-${'' /*   height:50%;
- */}  overflow: hidden;
+  overflow: hidden;
   position: relative;
+  width: 31%;
 `;
 
 const Title = styled.h2`
@@ -60,9 +57,12 @@ const Comment = styled.p`
   width: 100px;
 `;
 
-function ScoreGraph({ data }) {
-  console.log(data);
+/**
+ * Create score graph RadialBarChart
+ * @returns {JSX.Element} ScoreGraph component
+ */
 
+function ScoreGraph({ data }) {
   const tab = [
     {
       scale: 0,
@@ -90,8 +90,6 @@ function ScoreGraph({ data }) {
       </Content>
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
-          //outerRadius={90}
-          //innerRadius={70}
           innerRadius="50%"
           outerRadius="80%"
           data={tab}

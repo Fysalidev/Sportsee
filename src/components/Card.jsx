@@ -30,6 +30,11 @@ const Title = styled.h2`
   font-weight: 500;
 `;
 
+/**
+ * Create a user card
+ * @returns {JSX.Element} Card component
+ */
+
 function Card({ gender, id }) {
   return (
     <Root to={`user/${id}`}>

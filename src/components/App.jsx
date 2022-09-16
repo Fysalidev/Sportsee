@@ -7,8 +7,8 @@ import Error from "../pages/Error";
 import { ApiProvider } from "../utils/context";
 
 const AppWrapper = styled.div`
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
 `;
@@ -17,11 +17,16 @@ const View = styled.div`
   flex-grow: 1;
 `;
 
+/**
+ * Create App
+ * @returns {JSX.Element} App component
+ */
+
 function App() {
   return (
     <AppWrapper>
       <BrowserRouter>
-      <Header />
+        <Header />
         <ApiProvider>
           <View>
             <Routes>

@@ -16,17 +16,24 @@ const Wrapper = styled(ResponsiveContainer)`
 
 const CustomTooltipWrapper = styled.div`
   background: #e60000;
-  height: 63px;
-  width: 39px;
   color: #ffffff;
+  height: 63px;
   font-family: "Roboto";
+  font-size: 7px;
   font-style: normal;
   font-weight: 500;
-  font-size: 7px;
   line-height: 24px;
-  text-align: center;
   outline: none;
+  text-align: center;
+  width: 39px;
 `;
+
+/**
+ * Custom active Tooltip's BarChart
+ * @param {boolean}  [Props.active='true']
+ * @param {array}   [Props.payload=[]]
+ * @returns tooltip or null
+ */
 
 const CustomTooltip = ({ active, payload }) => {
   if (active) {
@@ -39,6 +46,11 @@ const CustomTooltip = ({ active, payload }) => {
   }
   return null;
 };
+
+/**
+ * Create activity graph BarChart
+ * @returns {JSX.Element} ActivityGraph component
+ */
 
 function ActivityGraph({ data }) {
   return (

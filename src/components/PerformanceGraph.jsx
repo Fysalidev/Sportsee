@@ -9,24 +9,27 @@ import {
 } from "recharts";
 
 const Wrapper = styled.div`
-  width: 31%;
-  ${"" /* height:50%; */}
   background: #282d30;
   border-radius: 5px;
-  overflow: hidden;
-  padding: 0.1rem;
   font-family: "Roboto";
+  font-size: 12px;
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
   line-height: 24px;
-  ${"" /* flex-grow:1; */}
+  overflow: hidden;
+  padding: 0.1rem;
+  width: 31%;
 `;
+
+/**
+ * Create performance graph RadarChart
+ * @returns {JSX.Element} PerformanceGraph component
+ */
 
 function PerformanceGraph({ data }) {
   return (
     <Wrapper>
-      <ResponsiveContainer >
+      <ResponsiveContainer>
         <RadarChart
           outerRadius="58%"
           innerRadius="5%"
@@ -34,10 +37,7 @@ function PerformanceGraph({ data }) {
           cx="50%"
           cy="50%"
         >
-          <PolarGrid 
-            radialLines={false}
-            outerRadius="10%"
-            />
+          <PolarGrid radialLines={false} outerRadius="10%" />
 
           <PolarAngleAxis
             dataKey="kind"

@@ -32,6 +32,11 @@ const Title = styled.h2`
   font-weight: 500;
 `;
 
+/**
+ * Create Home page
+ * @returns {JSX.Element} Home component
+ */
+
 function Home() {
   return (
     <Main>

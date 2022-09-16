@@ -12,27 +12,32 @@ import {
 } from "recharts";
 
 const Wrapper = styled.div`
-  width:31%;
-  ${'' /* height:50%; */}
+  background: red;
   border-radius: 5px;
   overflow: hidden;
-  background:red;
-${'' /*   flex-grow:1 */}
+  width: 31%;
 `;
 
 const CustomTooltipSession = styled.div`
-  width: 39px;
-  height: 25px;
+  align-items: center;
+  display: flex;
   font-family: "Roboto";
+  font-size: 8px;
   font-style: normal;
   font-weight: 500;
-  font-size: 8px;
-  line-height: 24px;
-  display: flex;
-  align-items: center;
+  height: 25px;
   justify-content: center;
+  line-height: 24px;
   outline-color: none;
+  width: 39px;
 `;
+
+/**
+ * Custom active Tooltip's LineChart
+ * @param {boolean}  [Props.active='true']
+ * @param {array}   [Props.payload=[]]
+ * @returns tooltip or null
+ */
 
 const CustomTooltip = ({ active, payload }) => {
   if (active) {
@@ -45,6 +50,12 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+/**
+ * Custom active Tooltip's BarChart
+ * @param {prop}
+ * @return {JSX.Element} Rectangle component
+ */
+
 const CustomCursor = ({ points }) => {
   return (
     <Rectangle
@@ -56,6 +67,11 @@ const CustomCursor = ({ points }) => {
     />
   );
 };
+
+/**
+ * Create session graph LineChart
+ * @returns {JSX.Element} SessionGraph component
+ */
 
 function SessionGraph({ data }) {
   return (
