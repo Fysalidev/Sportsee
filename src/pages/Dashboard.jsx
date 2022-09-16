@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ApiContext } from "../utils/context";
-import { activityData } from "../services/providers";
-import { averageData, performanceData, userData } from "../services/providers";
+import { ApiContext } from "../api/apicontext";
+import { activityData } from "../api/providers";
+import { averageData, performanceData, userData } from "../api/providers";
 
 import calories from "../assets/calories.png";
 import proteines from "../assets/proteines.png";

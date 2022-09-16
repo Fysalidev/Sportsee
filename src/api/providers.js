@@ -36,8 +36,8 @@ export async function activityData(id, setup) {
 
 /**
  * Provid and formatted average data from api or mocked data
- * @param { number } id user id
- * @param { boolean } [setup] Api state
+ * @param { String } id user id
+ * @param { Boolean } [setup] Api state
  * @returns {Object}
  */
 
@@ -49,8 +49,8 @@ export async function averageData(id, setup) {
 
 /**
  * Provid formatted performance data
- * @param { number } id user id
- * @param { boolean } [setup] Api state
+ * @param { String } id user id
+ * @param { Boolean } [setup] Api state
  * @returns {Object}
  */
 
