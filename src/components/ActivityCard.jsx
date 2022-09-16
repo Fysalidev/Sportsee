@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Card = styled.div`
   align-items: center;
@@ -54,4 +55,12 @@ function ActivityCard({ name, unit, icon, data }) {
     </Card>
   );
 }
+
+ActivityCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  unit: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  data: PropTypes.number.isRequired,
+};
+
 export default ActivityCard;

@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
+import User from "../api/Models/User"
 import { ResponsiveContainer, RadialBarChart, RadialBar } from "recharts";
 
 const Wrapper = styled.div`
@@ -108,5 +110,9 @@ function ScoreGraph({ data }) {
     </Wrapper>
   );
 }
+
+ScoreGraph.propTypes = {
+  data: PropTypes.instanceOf(User).isRequired,
+};
 
 export default ScoreGraph;

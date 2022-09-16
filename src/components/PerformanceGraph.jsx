@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import PropTypes from "prop-types";
+import Performance from '../api/Models/Performance'
 import {
   Radar,
   RadarChart,
@@ -60,5 +61,9 @@ function PerformanceGraph({ data }) {
     </Wrapper>
   );
 }
+
+PerformanceGraph.propTypes = {
+  data: PropTypes.instanceOf(Performance).isRequired,
+};
 
 export default PerformanceGraph;

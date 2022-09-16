@@ -5,7 +5,7 @@ export const ApiContext = createContext();
 
 /**
  * Provid Api state
- * @param { children: JSX.Element } [props] 
+ * @param { children: JSX.Element } [props]
  * @returns {JSX.Element}
  */
 
@@ -21,4 +21,3 @@ export const ApiProvider = ({ children }) => {
     </ApiContext.Provider>
   );
 };
-

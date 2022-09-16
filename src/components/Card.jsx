@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import woman from "../assets/woman.png";
 import man from "../assets/man.png";
 import { Link } from "react-router-dom";
@@ -45,5 +46,10 @@ function Card({ gender, id }) {
     </Root>
   );
 }
+
+Card.propTypes = {
+  gender: PropTypes.oneOf(['woman', 'man']).isRequired,
+  id: PropTypes.string.isRequired,
+};
 
 export default Card;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 import {
   BarChart,
   Bar,
@@ -53,6 +54,7 @@ const CustomTooltip = ({ active, payload }) => {
  */
 
 function ActivityGraph({ data }) {
+  console.log(data);
   return (
     <Wrapper width="100%" height="52.38%">
       <BarChart data={data.activity} barSize={7} barGap={8} barCategoryGap={57}>
@@ -138,5 +140,18 @@ function ActivityGraph({ data }) {
     </Wrapper>
   );
 }
+
+ActivityGraph.propTypes = {
+  data: PropTypes.shape({
+    id: PropTypes.string,
+    activity: PropTypes.arrayOf(
+      PropTypes.shape({
+        kilogram: PropTypes.string,
+        calorie: PropTypes.string,
+        day: PropTypes.string,
+      }).isRequired,
+    ),
+  }).isRequired,
+};
 
 export default ActivityGraph;
