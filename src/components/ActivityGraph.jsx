@@ -54,7 +54,6 @@ const CustomTooltip = ({ active, payload }) => {
  */
 
 function ActivityGraph({ data }) {
-  console.log(data);
   return (
     <Wrapper width="100%" height="52.38%">
       <BarChart data={data.activity} barSize={7} barGap={8} barCategoryGap={57}>
@@ -149,7 +148,7 @@ ActivityGraph.propTypes = {
         kilogram: PropTypes.string,
         calorie: PropTypes.string,
         day: PropTypes.string,
-      }).isRequired,
+      }).isRequired
     ),
   }).isRequired,
 };
