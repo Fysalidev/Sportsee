@@ -1,3 +1,20 @@
+# Projet 12 - Sportsee - Développez un tableau de bord d'analytics avec React - OpenClassrooms
+
+# Backend
+
+Fork and install Backend Api from : https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
+
+Start backend on http://localhost:3000/ :
+"nvm use 12.18"
+"yarn dev"
+
+# Frontend
+
+Fork this repository and start project on http://localhost:3001
+"npm start"
+
+Enjoy...
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
