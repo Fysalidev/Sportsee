@@ -34,8 +34,8 @@ const CustomTooltipSession = styled.div`
 
 /**
  * Custom active Tooltip's LineChart
- * @param {boolean}  [Props.active='true']
- * @param {array}   [Props.payload=[]]
+ * @param {Boolean}  [Props.active='true']
+ * @param {Array}   [Props.payload=[]]
  * @returns tooltip or null
  */
 
