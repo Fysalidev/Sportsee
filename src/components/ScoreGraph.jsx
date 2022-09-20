@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import User from "../api/Models/User"
+import User from "../api/Models/User";
 import { ResponsiveContainer, RadialBarChart, RadialBar } from "recharts";
 
 const Wrapper = styled.div`
@@ -65,9 +65,6 @@ const Comment = styled.p`
  */
 
 function ScoreGraph({ data }) {
-
-  console.log(data)
-
   const tab = [
     {
       scale: 0,
