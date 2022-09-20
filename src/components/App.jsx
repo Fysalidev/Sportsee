@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 import Header from "./Header";
 import Dashboard from "../pages/Dashboard";
 import Error from "../pages/Error";
-import { ApiProvider } from "../api/apicontext";
+import { ApiProvider } from "../api/Apicontext";
 
 const AppWrapper = styled.div`
   display: flex;

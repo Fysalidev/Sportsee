@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useContext } from "react";
-import { ApiContext } from "../api/apicontext";
+import { ApiContext } from "../api/Apicontext";
 
 const Wrapper = styled.div`
   align-items: center;

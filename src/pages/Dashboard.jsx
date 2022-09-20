@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ApiContext } from "../api/apicontext";
+import { ApiContext } from "../api/Apicontext";
 import { activityData } from "../api/providers";
 import { averageData, performanceData, userData } from "../api/providers";
 
