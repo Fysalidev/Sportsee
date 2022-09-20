@@ -39,6 +39,10 @@ const Infos = styled.div`
 
 /**
  * Create activity card
+ * @param {string} name
+ * @param {string} unit
+ * @param {string} icon
+ * @param {number} data
  * @returns {JSX.Element} ActivityCard component
  */
 
