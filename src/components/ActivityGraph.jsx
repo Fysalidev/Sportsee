@@ -142,11 +142,11 @@ function ActivityGraph({ data }) {
 
 ActivityGraph.propTypes = {
   data: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.number,
     activity: PropTypes.arrayOf(
       PropTypes.shape({
-        kilogram: PropTypes.string,
-        calorie: PropTypes.string,
+        kilogram: PropTypes.number,
+        calorie: PropTypes.number,
         day: PropTypes.string,
       }).isRequired
     ),
