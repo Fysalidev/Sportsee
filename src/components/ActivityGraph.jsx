@@ -50,7 +50,7 @@ const CustomTooltip = ({ active, payload }) => {
 
 /**
  * Create activity graph BarChart
- * @prop {object} {}
+ * @prop {object} data
  * @returns {JSX.Element} ActivityGraph component
  */
 

@@ -60,7 +60,7 @@ const Comment = styled.p`
 
 /**
  * Create score graph RadialBarChart
- * @prop {object} {}
+ * @prop {number} data
  * @returns {JSX.Element} ScoreGraph component
  */
 
