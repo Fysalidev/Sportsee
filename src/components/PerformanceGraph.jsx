@@ -24,6 +24,7 @@ const Wrapper = styled.div`
 
 /**
  * Create performance graph RadarChart
+ * @prop {object} {}
  * @returns {JSX.Element} PerformanceGraph component
  */
 

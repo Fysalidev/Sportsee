@@ -70,6 +70,7 @@ const CustomCursor = ({ points }) => {
 
 /**
  * Create session graph LineChart
+ * @prop {object} {}
  * @returns {JSX.Element} SessionGraph component
  */
 
