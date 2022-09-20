@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import Average from "../api/Models/Average"
+import Average from "../api/Models/Average";
 
 import {
   LineChart,
@@ -161,7 +161,7 @@ function SessionGraph({ data }) {
 }
 
 SessionGraph.propTypes = {
-  data: PropTypes.instanceOf(Average).isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default SessionGraph;

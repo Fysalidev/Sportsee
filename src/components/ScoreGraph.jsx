@@ -65,6 +65,9 @@ const Comment = styled.p`
  */
 
 function ScoreGraph({ data }) {
+
+  console.log(data)
+
   const tab = [
     {
       scale: 0,
@@ -112,7 +115,7 @@ function ScoreGraph({ data }) {
 }
 
 ScoreGraph.propTypes = {
-  data: PropTypes.instanceOf(User).isRequired,
+  data: PropTypes.number.isRequired,
 };
 
 export default ScoreGraph;
