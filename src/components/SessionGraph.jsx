@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import Average from "../api/Models/Average";
-
 import {
   LineChart,
   Line,
