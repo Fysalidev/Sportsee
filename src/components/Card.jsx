@@ -33,8 +33,7 @@ const Title = styled.h2`
 
 /**
  * Create a user card
- * @param {string} gender
- * @param {string} id
+ * @param {{gender:string, id:string}} param0
  * @returns {JSX.Element} Card component
  */
 
